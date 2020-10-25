@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sadboi App</string>
+    <string name="action_settings">Pengaturan</string>
+    <string name="menu_language">Bahasa</string>
+    <string name="nav_story_sadboi">Sadboi Story</string>
+    <string name="nav_quote_sadboi">Sadboi Quote</string>
+    <string name="menu_help">Bantuan</string>
+</resources>
