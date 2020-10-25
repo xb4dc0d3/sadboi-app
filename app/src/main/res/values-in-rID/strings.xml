@@ -2,8 +2,9 @@
 <resources>
     <string name="app_name">Sadboi App</string>
     <string name="action_settings">Pengaturan</string>
-    <string name="menu_language">Bahasa</string>
-    <string name="nav_story_sadboi">Sadboi Story</string>
-    <string name="nav_quote_sadboi">Sadboi Quote</string>
     <string name="menu_help">Bantuan</string>
+    <string name="button_masuk_text">Mulai</string>
+    <string name="action_language">Bahasa</string>
+    <string name="menu_story_sadboi">Cerita Sadboi</string>
+    <string name="menu_quote_sadboi">Quote Sadboi</string>
 </resources>
