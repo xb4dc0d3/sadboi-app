@@ -25,13 +25,13 @@
 
     <fragment
         android:id="@+id/nav_story_sadboi"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.slideshow.SlideshowFragment"
+        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.story_sadboi.StorySadboiFragment"
         android:label="@string/menu_story_sadboi"
         tools:layout="@layout/fragment_story_sadboi" />
 
     <fragment
         android:id="@+id/nav_quote_sadboi"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.slideshow.SlideshowFragment"
+        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.quote_sadboi.QuoteSadboiFragment"
         android:label="@string/menu_quote_sadboi"
         tools:layout="@layout/fragment_quote_sadboi" />
 </navigation>
