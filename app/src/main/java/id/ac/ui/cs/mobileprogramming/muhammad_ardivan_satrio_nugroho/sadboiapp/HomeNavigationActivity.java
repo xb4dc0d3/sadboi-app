@@ -22,6 +22,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.network.NetworkReceiver;
 
 public class HomeNavigationActivity extends AppCompatActivity {
@@ -126,12 +127,13 @@ public class HomeNavigationActivity extends AppCompatActivity {
 
     // TODO: Create fragment/activity to CreateStory
     public void createStory(View view) {
-
-        Toast.makeText(this, "Create Story", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, CreateUpdateStoryActivity.class);
+        startActivity(intent);
     }
 
     // TODO: Create fragment/activity to createQuote
     public void createQuote(View view) {
-        Toast.makeText(this, "Create Quote", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, CreateUpdateQuoteActivity.class);
+        startActivity(intent);
     }
 }
