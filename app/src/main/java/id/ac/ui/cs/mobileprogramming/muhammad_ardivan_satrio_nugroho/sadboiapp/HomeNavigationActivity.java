@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,6 +26,7 @@ import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.n
 
 public class HomeNavigationActivity extends AppCompatActivity {
 
+    private Boolean btnFlag = true;
     private AppBarConfiguration mAppBarConfiguration;
     private NetworkReceiver receiver = new NetworkReceiver();
 
@@ -34,14 +36,34 @@ public class HomeNavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_navigation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+        final FloatingActionButton fab = findViewById(R.id.fab);
+        final FloatingActionButton fab1 = findViewById(R.id.fab1);
+        final FloatingActionButton fab2 = findViewById(R.id.fab2);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if (btnFlag) {
+                    fab1.show();
+                    fab2.show();
+                    fab1.animate().translationY(-(fab2.getCustomSize()+fab.getCustomSize()+20));
+                    fab2.animate().translationY(-(fab.getCustomSize()+10));
+                    fab.setImageResource(R.drawable.ic_close_white);
+                    btnFlag = false;
+                }
+
+                else {
+                    fab1.hide();
+                    fab2.hide();
+                    fab1.animate().translationY(0);
+                    fab2.animate().translationY(0);
+                    fab.setImageResource(R.drawable.ic_action_add);
+                    btnFlag = true;
+                }
             }
         });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
@@ -100,5 +122,16 @@ public class HomeNavigationActivity extends AppCompatActivity {
     protected void onPause() {
         this.unregisterReceiver(receiver);
         super.onPause();
+    }
+
+    // TODO: Create fragment/activity to CreateStory
+    public void createStory(View view) {
+
+        Toast.makeText(this, "Create Story", Toast.LENGTH_SHORT).show();
+    }
+
+    // TODO: Create fragment/activity to createQuote
+    public void createQuote(View view) {
+        Toast.makeText(this, "Create Quote", Toast.LENGTH_SHORT).show();
     }
 }

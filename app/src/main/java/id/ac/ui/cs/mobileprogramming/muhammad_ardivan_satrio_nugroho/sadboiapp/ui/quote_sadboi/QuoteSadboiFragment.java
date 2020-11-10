@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.home.HomeViewModel;
 
 public class QuoteSadboiFragment extends Fragment {
 
@@ -32,6 +31,7 @@ public class QuoteSadboiFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        textView.setText("WELCOME");
         return root;
     }
 }

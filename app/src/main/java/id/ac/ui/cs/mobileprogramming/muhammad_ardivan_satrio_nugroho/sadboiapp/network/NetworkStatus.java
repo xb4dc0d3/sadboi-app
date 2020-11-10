@@ -28,7 +28,7 @@ public class NetworkStatus {
         int conn = NetworkStatus.getConnectivityStatus(context);
         String status = null;
         if (conn == NetworkStatus.WIFI || conn == NetworkStatus.MOBILE) {
-             status = "Data connection is detected";
+             status = "";
         }
         else if (conn == NetworkStatus.NOT_CONNECTED) {
             status = "No internet connection";
