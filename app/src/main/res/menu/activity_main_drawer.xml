@@ -20,16 +20,19 @@
         <!--Navbar Cerita Sadboi Menu-->
         <item
             android:id="@+id/nav_story_sadboi"
+            android:icon="@drawable/ic_menu_story_black"
             android:title="@string/menu_story_sadboi"/>
 
         <!--Navbar Quote Sadboi Menu-->
         <item
             android:id="@+id/nav_quote_sadboi"
+            android:icon="@drawable/ic_menu_quote_black"
             android:title="@string/menu_quote_sadboi"/>
 
         <!--Navbar Help Menu-->
         <item
             android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_help"
             android:title="@string/menu_help"/>
     </group>
 </menu>

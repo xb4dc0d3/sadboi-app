@@ -30,7 +30,7 @@
         android:visibility="gone"
         android:layout_margin="12dp"
         android:src="@drawable/ic_action_story_create"
-        app:fabCustomSize="50dp"
+        app:fabCustomSize="40dp"
         app:backgroundTint="@color/red_mellow"
         android:onClick="createStory"/>
 
@@ -43,9 +43,10 @@
         android:visibility="gone"
         android:layout_margin="12dp"
         android:src="@drawable/ic_action_quote_create"
-        app:fabCustomSize="50dp"
+        app:fabCustomSize="40dp"
         app:backgroundTint="@color/red_mellow"
-        android:onClick="createQuote"/>
+        android:onClick="createQuote"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -54,7 +55,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_action_add"
-        app:fabCustomSize="50dp"
-        app:backgroundTint="#3F51B5" />
+        app:fabCustomSize="45dp"
+        app:backgroundTint="#3F51B5"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
