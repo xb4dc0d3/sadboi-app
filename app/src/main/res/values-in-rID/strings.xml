@@ -7,4 +7,5 @@
     <string name="action_language">Bahasa</string>
     <string name="menu_story_sadboi">Cerita Sadboi</string>
     <string name="menu_quote_sadboi">Quote Sadboi</string>
+    <string name="menu_draft_story_sadboi">Draf Cerita Sadboi</string>
 </resources>
