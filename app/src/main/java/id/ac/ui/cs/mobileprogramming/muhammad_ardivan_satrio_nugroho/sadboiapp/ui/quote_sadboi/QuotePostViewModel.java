@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class QuoteSadboiViewModel extends ViewModel {
+public class QuoteViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public QuoteSadboiViewModel() {
+    public QuoteViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is quote sadboi fragment");
     }

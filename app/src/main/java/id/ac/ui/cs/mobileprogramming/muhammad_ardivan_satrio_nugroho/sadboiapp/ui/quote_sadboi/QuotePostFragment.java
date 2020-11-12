@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.story_sadboi;
+package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.quote_sadboi;
 
 import android.os.Bundle;
 
@@ -15,22 +15,23 @@ import android.widget.TextView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 
-public class StorySadboiFragment extends Fragment {
+public class QuoteFragment extends Fragment {
 
-    private StorySadboiViewModel storySadboiViewModel;
+    private QuoteViewModel quoteViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        storySadboiViewModel =
-                ViewModelProviders.of(this).get(StorySadboiViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_story_sadboi, container, false);
-        final TextView textView = root.findViewById(R.id.text_story_sadboi);
-        storySadboiViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        quoteViewModel =
+                ViewModelProviders.of(this).get(QuoteViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_quote_sadboi, container, false);
+        final TextView textView = root.findViewById(R.id.text_quote_sadboi);
+        quoteViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
         });
+        textView.setText("WELCOME");
         return root;
     }
 }
