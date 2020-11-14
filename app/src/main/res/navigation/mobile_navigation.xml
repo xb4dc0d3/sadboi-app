@@ -12,26 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
-        android:id="@+id/nav_story_sadboi"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.story_sadboi.StorySadboiFragment"
+        android:id="@+id/nav_story"
+        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.story_sadboi.StoryPostFragment"
         android:label="@string/menu_story_sadboi"
         tools:layout="@layout/fragment_story_sadboi" />
 
     <fragment
-        android:id="@+id/nav_quote_sadboi"
-        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.quote_sadboi.QuoteSadboiFragment"
+        android:id="@+id/nav_quote"
+        android:name="id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.quote_sadboi.QuotePostFragment"
         android:label="@string/menu_quote_sadboi"
         tools:layout="@layout/fragment_quote_sadboi" />
 </navigation>

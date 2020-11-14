@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class StoryViewModel extends ViewModel {
+public class StoryPostViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public StoryViewModel() {
+    public StoryPostViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is story sadboi fragment");
     }

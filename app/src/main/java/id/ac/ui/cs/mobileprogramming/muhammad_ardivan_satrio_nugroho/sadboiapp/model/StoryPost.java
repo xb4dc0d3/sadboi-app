@@ -7,10 +7,9 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class StoryPosts {
+public class StoryPost {
 
     @PrimaryKey(autoGenerate = true)
-    @NonNull
     @ColumnInfo(name="id")
     private int id;
 
@@ -20,11 +19,16 @@ public class StoryPosts {
     @ColumnInfo(name="content")
     private String content;
 
-    public StoryPosts(int id, String title, String content){
-        
+    public StoryPost(int id, String title, String content){
+
         this.id = id;
         this.title = title;
         this.content = content;
+    }
+
+    public int getId(){
+
+        return this.id;
     }
 
     public String getTitle(){
@@ -32,7 +36,6 @@ public class StoryPosts {
     }
 
     public String getContent(){
-
         return this.content;
     }
 }

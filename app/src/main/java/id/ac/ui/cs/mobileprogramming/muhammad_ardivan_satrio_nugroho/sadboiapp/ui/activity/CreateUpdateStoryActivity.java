@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp;
+package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ public class CreateUpdateStoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_update_story);
         getSupportActionBar().setTitle("Create/Update Story");
     }
+
     // TODO: Click and publish story to Firebase
     public void publishStory(View view) {
     }

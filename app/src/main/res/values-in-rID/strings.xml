@@ -8,4 +8,7 @@
     <string name="menu_story_sadboi">Cerita Sadboi</string>
     <string name="menu_quote_sadboi">Quote Sadboi</string>
     <string name="menu_draft_story_sadboi">Draf Cerita Sadboi</string>
+    <string name="see_quotes">Lihat Quotes</string>
+    <string name="story_drafts">Lihat Draft Cerita</string>
+    <string name="see_stories">Lihat Cerita</string>
 </resources>

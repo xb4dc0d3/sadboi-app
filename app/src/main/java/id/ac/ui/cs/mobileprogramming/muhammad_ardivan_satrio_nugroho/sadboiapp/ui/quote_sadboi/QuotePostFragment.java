@@ -15,17 +15,17 @@ import android.widget.TextView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 
-public class QuoteFragment extends Fragment {
+public class QuotePostFragment extends Fragment {
 
-    private QuoteViewModel quoteViewModel;
+    private QuotePostViewModel quotePostViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        quoteViewModel =
-                ViewModelProviders.of(this).get(QuoteViewModel.class);
+        quotePostViewModel =
+                ViewModelProviders.of(this).get(QuotePostViewModel.class);
         View root = inflater.inflate(R.layout.fragment_quote_sadboi, container, false);
         final TextView textView = root.findViewById(R.id.text_quote_sadboi);
-        quoteViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        quotePostViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
