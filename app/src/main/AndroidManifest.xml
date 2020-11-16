@@ -9,9 +9,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.QuoteActivity"></activity>
+        <activity android:name=".ShowStoryDetail"></activity>
+        <activity android:name=".ui.activity.QuoteActivity" />
         <activity android:name=".ui.activity.StoryActivity" />
         <activity android:name=".ui.activity.CreateUpdateStoryActivity" />
         <activity android:name=".ui.activity.CreateUpdateQuoteActivity" />
