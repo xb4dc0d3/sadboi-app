@@ -1,24 +1,30 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo;
 
-import com.google.gson.annotations.SerializedName;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Story {
 
-    @SerializedName("title")
+    private String pk;
     private String title;
-
-    @SerializedName("content")
     private String content;
-
-    @SerializedName("created_at")
     private String created_at;
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-
-    public Story(String title, String content, String created_at){
-
+    public Story(String pk, String title, String content, String created_at){
+        this.pk = pk;
         this.title = title;
         this.content = content;
         this.created_at = created_at;
+    }
+
+
+    public String getPk() {
+        return pk;
+    }
+
+    public void setPk(String pk) {
+        this.pk = pk;
     }
 
     public String getTitle() {
@@ -43,5 +49,13 @@ public class Story {
 
     public void setCreated_at(String created_at) {
         this.created_at = created_at;
+    }
+
+    public Map<String, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
     }
 }

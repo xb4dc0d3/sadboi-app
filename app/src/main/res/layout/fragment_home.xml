@@ -12,6 +12,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="168dp"
         android:text="@string/see_stories"
+        android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,10 +22,10 @@
         android:id="@+id/button_quote_activity"
         android:layout_width="119dp"
         android:layout_height="45dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
+        android:gravity="center_horizontal"
         android:text="@string/see_quotes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_story_activity" />
 
@@ -32,10 +33,11 @@
         android:id="@+id/button_draft_story_activity"
         android:layout_width="121dp"
         android:layout_height="55dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center_horizontal"
         android:text="@string/story_drafts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_quote_activity" />
 

@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface ApiInterface {
-    @GET("story_array.json")
-    Call<List<Story>> getMovies();
+    @GET("all-stories")
+    Call<List<Story>> getStories();
 }
