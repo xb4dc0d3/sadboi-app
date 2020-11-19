@@ -12,11 +12,20 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowStoryDetail"></activity>
-        <activity android:name=".ui.activity.QuoteActivity" />
-        <activity android:name=".ui.activity.StoryActivity" />
-        <activity android:name=".ui.activity.CreateUpdateStoryActivity" />
-        <activity android:name=".ui.activity.CreateUpdateQuoteActivity" />
+        <activity android:name=".ui.activity.ShowQuoteDetail"></activity>
+        <activity
+            android:name=".ui.activity.ShowStoryDetail"
+            android:label="@string/stories_app_bar" />
+        <activity
+            android:name=".ui.activity.QuoteActivity"
+            android:label="@string/quotes_app_bar" />
+        <activity
+            android:name=".ui.activity.StoryActivity"
+            android:label="@string/stories_app_bar" />
+        <activity
+            android:name=".ui.activity.SavedStoryActivity"
+            android:label="@string/saved_stories_text" />
+        <activity android:name=".ui.activity.SavedQuoteActivity" />
         <activity
             android:name=".ui.activity.HomeNavigationActivity"
             android:label="@string/title_activity_home_navigation"
