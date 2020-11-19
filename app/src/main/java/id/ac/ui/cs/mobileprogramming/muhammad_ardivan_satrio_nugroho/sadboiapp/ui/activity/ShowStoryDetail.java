@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.widget.TextView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.Story;
@@ -14,6 +15,9 @@ public class ShowStoryDetail extends AppCompatActivity {
 
     private TextView textViewStoryTitle;
     private TextView textViewStoryContent;
+
+    private static String title = "";
+    private static String content = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +29,19 @@ public class ShowStoryDetail extends AppCompatActivity {
         textViewStoryContent.setMovementMethod(new ScrollingMovementMethod());
         Intent intent = getIntent();
 
-        textViewStoryTitle.setText(intent.getStringExtra(StoryActivity.title));
-        textViewStoryContent.setText(intent.getStringExtra(StoryActivity.content));
+        title = intent.getStringExtra(StoryActivity.title);
+        content = intent.getStringExtra(StoryActivity.content);
+        textViewStoryTitle.setText(title);
+        textViewStoryContent.setText(content);
+    }
 
+    public void shareStory(View view) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TITLE, title);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, content);
+        sendIntent.setType("text/plain");
+        Intent shareIntent = Intent.createChooser(sendIntent, null);
+        startActivity(shareIntent);
     }
 }

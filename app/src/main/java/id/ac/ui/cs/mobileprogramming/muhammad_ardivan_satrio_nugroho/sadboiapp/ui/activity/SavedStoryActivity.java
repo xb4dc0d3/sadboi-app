@@ -10,7 +10,7 @@ public class CreateUpdateStoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_update_story);
+        setContentView(R.layout.recyclerview_item_saved_story);
         getSupportActionBar().setTitle("Create/Update Story");
     }
 
