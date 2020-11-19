@@ -7,7 +7,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "storypost_table")
-public class StoryPost {
+public class SavedStory {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="id")
@@ -19,9 +19,11 @@ public class StoryPost {
     @ColumnInfo(name="content")
     private String content;
 
+    public SavedStory(){
 
-    // Constructor without id
-    public StoryPost(String title, String content){
+    }
+
+    public SavedStory(String title, String content){
         this.title = title;
         this.content = content;
     }
@@ -30,10 +32,7 @@ public class StoryPost {
         this.id = id;
     }
 
-    public int getId(){
-
-        return this.id;
-    }
+    public int getId(){ return this.id; }
 
     public void setTitle(String title) {
         this.title = title;
