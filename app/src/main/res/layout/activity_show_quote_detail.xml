@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.ShowStoryDetail">
+    tools:context=".ui.activity.ShowQuoteDetail">
 
     <TextView
-        android:id="@+id/textStoryTitle"
+        android:id="@+id/textQuoteTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -21,10 +21,10 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textStoryContent"
+        android:id="@+id/textQuote"
         android:layout_width="374dp"
         android:layout_height="620dp"
-        android:layout_below="@+id/textStoryTitle"
+        android:layout_below="@+id/textQuoteTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -32,30 +32,46 @@
         android:layout_marginLeft="22dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="15dp"
-        android:text="Content"
+        android:text="Quote"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textQuoteFrom"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textQuote"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="271dp"
+        android:layout_marginLeft="271dp"
+        android:layout_marginTop="-431dp"
+        android:layout_marginEnd="19dp"
+        android:text="QuoteFrom"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/buttonShareStory"
+        android:id="@+id/buttonShareQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="40dp"
-        android:onClick="shareStory"
+        android:onClick="shareQuote"
         android:text="@string/share_text" />
 
     <Button
-        android:id="@+id/buttonSaveStory"
+        android:id="@+id/buttonSaveQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="36dp"
-        android:layout_toStartOf="@+id/buttonShareStory"
+        android:layout_toStartOf="@+id/buttonShareQuote"
         android:text="@string/save_text"
-        android:onClick="saveStory"/>
+        android:onClick="saveQuote"/>
 
 
 </RelativeLayout>

@@ -23,4 +23,11 @@
     <string name="see_quotes">See Quotes</string>
     <string name="story_drafts">See Story Drafts</string>
     <string name="see_stories">See Stories</string>
+    <string name="quotes_app_bar">Quotes</string>
+    <string name="stories_app_bar">Stories</string>
+    <string name="share_text">Share</string>
+    <string name="save_text">Save</string>
+    <string name="no_story_text">No Story</string>
+    <string name="saved_stories_text">Saved Stories</string>
+
 </resources>
