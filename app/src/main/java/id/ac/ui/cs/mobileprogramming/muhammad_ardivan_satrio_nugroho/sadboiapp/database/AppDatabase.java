@@ -6,16 +6,17 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.dao.StoryPostDao;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.StoryPost;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.dao.SavedQuoteDao;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.dao.SavedStoryDao;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedQuote;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedStory;
 
-@Database(entities = {StoryPost.class}, version = 1)
+@Database(entities = {SavedStory.class, SavedQuote.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
-    //TODO: Add more entities
 
-    // StoryPostDao Abstract Class
-    public abstract StoryPostDao storyPostDao();
+    public abstract SavedStoryDao storyPostDao();
+    public abstract SavedQuoteDao savedQuoteDao();
 
     private static volatile AppDatabase INSTANCE;
 
