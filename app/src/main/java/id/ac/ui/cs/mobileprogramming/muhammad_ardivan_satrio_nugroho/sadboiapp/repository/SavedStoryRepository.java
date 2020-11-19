@@ -7,39 +7,38 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.dao.StoryPostDao;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.dao.SavedStoryDao;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.database.AppDatabase;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.StoryPost;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedStory;
 
-public class DraftStoryPostRepository {
+public class SavedStoryRepository {
 
-    private StoryPostDao mStoryPostDao;
-    private LiveData<List<StoryPost>> mAllStoryPosts;
+    private SavedStoryDao mSavedStoryDao;
+    private LiveData<List<SavedStory>> mAllStoryPosts;
 
-    public DraftStoryPostRepository(Application application) {
+    public SavedStoryRepository(Application application) {
         AppDatabase db = AppDatabase.getDatabase(application);
-        mStoryPostDao = db.storyPostDao();
-        mAllStoryPosts = mStoryPostDao.getAllStoryPosts();
+        mSavedStoryDao = db.storyPostDao();
+        mAllStoryPosts = mSavedStoryDao.getAllStoryPosts();
     }
 
-    public LiveData<List<StoryPost>> getAllStoryPosts() {
+    public LiveData<List<SavedStory>> getAllStoryPosts() {
         return mAllStoryPosts;
     }
-
-    // Insert StoryPost object using AsyncTask
-    public void insert(StoryPost storyPost) {
-        new insertAsyncTask(mStoryPostDao).execute(storyPost);
+    // Insert SavedStory object using AsyncTask
+    public void insert(SavedStory savedStory) {
+        new insertAsyncTask(mSavedStoryDao).execute(savedStory);
     }
 
-    private static class insertAsyncTask extends AsyncTask<StoryPost, Void, Void> {
-        private StoryPostDao mAsyncTaskDao;
+    private static class insertAsyncTask extends AsyncTask<SavedStory, Void, Void> {
+        private SavedStoryDao mAsyncTaskDao;
 
-        insertAsyncTask(StoryPostDao dao) {
+        insertAsyncTask(SavedStoryDao dao) {
             mAsyncTaskDao = dao;
         }
 
         @Override
-        protected Void doInBackground(final StoryPost... params) {
+        protected Void doInBackground(final SavedStory... params) {
             mAsyncTaskDao.insert(params[0]);
             return null;
         }
