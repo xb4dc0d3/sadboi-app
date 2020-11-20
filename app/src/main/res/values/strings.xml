@@ -29,5 +29,6 @@
     <string name="save_text">Save</string>
     <string name="no_story_text">No Story</string>
     <string name="saved_stories_text">Saved Stories</string>
+    <string name="no_quote_text">No quote</string>
 
 </resources>

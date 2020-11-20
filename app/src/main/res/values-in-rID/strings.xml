@@ -16,6 +16,7 @@
     <string name="share_text">Bagikan</string>
     <string name="save_text">Simpan</string>
     <string name="no_story_text">Tidak ada cerita</string>
+    <string name="no_quote_text">Tidak ada quote</string>
     <string name="saved_stories_text">Cerita Tersimpan</string>
     <string name="menu_home">Beranda</string>
 </resources>
