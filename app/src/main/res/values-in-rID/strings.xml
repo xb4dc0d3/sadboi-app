@@ -9,7 +9,6 @@
     <string name="menu_quote_sadboi">Quote Sadboi</string>
     <string name="menu_draft_story_sadboi">Draf Cerita Sadboi</string>
     <string name="see_quotes">Lihat Quotes</string>
-    <string name="story_drafts">Lihat Draft Cerita</string>
     <string name="see_stories">Lihat Cerita</string>
     <string name="quotes_app_bar">Quote</string>
     <string name="stories_app_bar">Cerita</string>
@@ -19,4 +18,7 @@
     <string name="no_quote_text">Tidak ada quote</string>
     <string name="saved_stories_text">Cerita Tersimpan</string>
     <string name="menu_home">Beranda</string>
+    <string name="saved_stories">Lihat Cerita Tersimpan</string>
+    <string name="saved_quotes">Lihat Quote Tersimpan</string>
+    <string name="saved_quotes_text">Quote Tersimpan</string>
 </resources>
