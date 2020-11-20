@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.QuoteActivity;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.SavedStoryActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.StoryActivity;
 
 public class HomeFragment extends Fragment {
@@ -43,7 +44,8 @@ public class HomeFragment extends Fragment {
                     startActivity(intent2);
                     break;
                 case R.id.button_draft_story_activity:
-                    // TODO: Create Draft Story Activity
+                    Intent intent3 = new Intent(getActivity(), SavedStoryActivity.class);
+                    startActivity(intent3);
                     break;
             }
         }
