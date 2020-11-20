@@ -1,7 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +10,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.api.ApiClient;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.api.ApiInterface;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityQuoteBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.Quote;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,11 +33,18 @@ public class QuoteActivity extends AppCompatActivity implements ListView.OnItemC
     private ListView listView;
     private List<Quote> quotes;
 
+    private ActivityQuoteBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quote);
-        listView = (ListView) findViewById(R.id.listViewQuote);
+
+        binding = ActivityQuoteBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+
+        listView = binding.listViewQuote;
         getQuotes();
         listView.setOnItemClickListener(this);
     }

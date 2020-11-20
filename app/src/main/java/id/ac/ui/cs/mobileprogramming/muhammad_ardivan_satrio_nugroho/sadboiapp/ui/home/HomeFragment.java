@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.FragmentHomeBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.QuoteActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.SavedQuoteActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.SavedStoryActivity;
@@ -20,17 +21,23 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
 
+    private FragmentHomeBinding fragmentHomeBinding;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+//        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        fragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false);
+        View view = fragmentHomeBinding.getRoot();
 
-        root.findViewById(R.id.button_story_activity).setOnClickListener(mListener);
-        root.findViewById(R.id.button_quote_activity).setOnClickListener(mListener);
-        root.findViewById(R.id.button_saved_story_activity).setOnClickListener(mListener);
-        root.findViewById(R.id.button_saved_quote_activity).setOnClickListener(mListener);
-        return root;
+
+        fragmentHomeBinding.buttonStoryActivity.setOnClickListener(mListener);
+        fragmentHomeBinding.buttonQuoteActivity.setOnClickListener(mListener);
+        fragmentHomeBinding.buttonSavedStoryActivity.setOnClickListener(mListener);
+        fragmentHomeBinding.buttonSavedQuoteActivity.setOnClickListener(mListener);
+
+        return view;
     }
 
     private final View.OnClickListener mListener = new View.OnClickListener() {
@@ -56,4 +63,10 @@ public class HomeFragment extends Fragment {
         }
     };
 
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        fragmentHomeBinding = null;
+    }
 }

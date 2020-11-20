@@ -1,7 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.api.ApiClient;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.api.ApiInterface;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityStoryBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.Story;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,20 +24,26 @@ import retrofit2.Response;
 
 public class StoryActivity extends AppCompatActivity implements ListView.OnItemClickListener{
 
-    public static final String PK = "pk";
     public static final String title = "title";
     public static final String content = "content";
-    public static final String created_at = "created_at";
 
     private ListView listView;
     private List<Story> stories;
 
 
+    private ActivityStoryBinding activityStoryBinding;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_story);
-        listView = (ListView) findViewById(R.id.listViewStory);
+
+        activityStoryBinding = ActivityStoryBinding.inflate(getLayoutInflater());
+        View view = activityStoryBinding.getRoot();
+        setContentView(view);
+
+
+        listView = activityStoryBinding.listViewStory;
         getStories();
         listView.setOnItemClickListener(this);
 

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -19,23 +20,29 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityHomeNavigationBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.network.NetworkReceiver;
 
 public class HomeNavigationActivity extends AppCompatActivity {
 
-    private Boolean btnFlag = true;
     private AppBarConfiguration mAppBarConfiguration;
     private NetworkReceiver receiver = new NetworkReceiver();
+    private ActivityHomeNavigationBinding activityHomeNavigationBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_navigation);
+
+        activityHomeNavigationBinding = ActivityHomeNavigationBinding.inflate(getLayoutInflater());
+        View view = activityHomeNavigationBinding.getRoot();
+        setContentView(view);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        DrawerLayout drawer = activityHomeNavigationBinding.drawerLayout;
+        NavigationView navigationView = activityHomeNavigationBinding.navView;
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.

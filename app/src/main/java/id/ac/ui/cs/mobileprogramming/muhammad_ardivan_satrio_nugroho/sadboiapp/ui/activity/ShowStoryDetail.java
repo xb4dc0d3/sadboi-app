@@ -1,8 +1,5 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -11,7 +8,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityShowStoryDetailBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedStory;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel.SavedStoryViewModel;
 
@@ -25,13 +25,18 @@ public class ShowStoryDetail extends AppCompatActivity {
 
     private SavedStoryViewModel mSavedStoryViewModel;
 
+    private ActivityShowStoryDetailBinding activityShowStoryDetailBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_story_detail);
 
-        textViewStoryTitle = findViewById(R.id.textStoryTitle);
-        textViewStoryContent = findViewById(R.id.textStoryContent);
+        activityShowStoryDetailBinding = ActivityShowStoryDetailBinding.inflate(getLayoutInflater());
+        View view = activityShowStoryDetailBinding.getRoot();
+        setContentView(view);
+
+        textViewStoryTitle = activityShowStoryDetailBinding.textStoryTitle;
+        textViewStoryContent = activityShowStoryDetailBinding.textStoryContent;
         textViewStoryContent.setMovementMethod(new ScrollingMovementMethod());
         Intent intent = getIntent();
 

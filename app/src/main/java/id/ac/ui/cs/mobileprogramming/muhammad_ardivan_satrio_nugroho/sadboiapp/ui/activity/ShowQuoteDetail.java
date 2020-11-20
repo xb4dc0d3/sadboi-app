@@ -1,21 +1,18 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
+
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityShowQuoteDetailBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedQuote;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedStory;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel.SavedQuoteViewModel;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel.SavedStoryViewModel;
 
 public class ShowQuoteDetail extends AppCompatActivity {
 
@@ -29,14 +26,19 @@ public class ShowQuoteDetail extends AppCompatActivity {
 
     private SavedQuoteViewModel mSavedQuoteViewModel;
 
+    private ActivityShowQuoteDetailBinding activityShowQuoteDetailBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_quote_detail);
 
-        textViewQuoteTitle = findViewById(R.id.textQuoteTitle);
-        textViewQuote = findViewById(R.id.textQuote);
-        textViewQuoteFrom = findViewById(R.id.textQuoteFrom);
+        activityShowQuoteDetailBinding = ActivityShowQuoteDetailBinding.inflate(getLayoutInflater());
+        View view = activityShowQuoteDetailBinding.getRoot();
+        setContentView(view);
+
+        textViewQuoteTitle = activityShowQuoteDetailBinding.textQuoteTitle;
+        textViewQuote = activityShowQuoteDetailBinding.textQuote;
+        textViewQuoteFrom = activityShowQuoteDetailBinding.textQuoteFrom;
 
         Intent intent = getIntent();
         title = intent.getStringExtra(QuoteActivity.title);

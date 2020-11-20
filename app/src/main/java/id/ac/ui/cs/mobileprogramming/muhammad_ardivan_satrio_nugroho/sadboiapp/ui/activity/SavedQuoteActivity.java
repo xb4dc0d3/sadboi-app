@@ -1,6 +1,7 @@
 package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,22 +12,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.adapter.SavedQuoteListAdapter;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ContentSavedQuoteBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedQuote;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel.SavedQuoteViewModel;
 
 public class SavedQuoteActivity extends AppCompatActivity {
 
-
     private SavedQuoteViewModel mSavedQuoteViewModel;
+    private ContentSavedQuoteBinding contentSavedQuoteBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_saved_quote);
+        
+        contentSavedQuoteBinding = ContentSavedQuoteBinding.inflate(getLayoutInflater());
+        View view = contentSavedQuoteBinding.getRoot();
+        setContentView(view);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewSavedQuote);
+        RecyclerView recyclerView = contentSavedQuoteBinding.recyclerViewSavedQuote;
         final SavedQuoteListAdapter adapter = new SavedQuoteListAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
