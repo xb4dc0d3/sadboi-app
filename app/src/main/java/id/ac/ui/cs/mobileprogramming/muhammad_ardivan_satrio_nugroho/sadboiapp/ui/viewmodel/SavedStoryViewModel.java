@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.saved_story_sadboi;
+package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel;
 
 import android.app.Application;
 
