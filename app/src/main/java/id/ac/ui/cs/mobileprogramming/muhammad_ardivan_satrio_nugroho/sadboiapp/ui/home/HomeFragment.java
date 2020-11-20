@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.QuoteActivity;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.SavedQuoteActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.SavedStoryActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.StoryActivity;
 
@@ -28,7 +28,8 @@ public class HomeFragment extends Fragment {
 
         root.findViewById(R.id.button_story_activity).setOnClickListener(mListener);
         root.findViewById(R.id.button_quote_activity).setOnClickListener(mListener);
-        root.findViewById(R.id.button_draft_story_activity).setOnClickListener(mListener);
+        root.findViewById(R.id.button_saved_story_activity).setOnClickListener(mListener);
+        root.findViewById(R.id.button_saved_quote_activity).setOnClickListener(mListener);
         return root;
     }
 
@@ -43,9 +44,13 @@ public class HomeFragment extends Fragment {
                     Intent intent2 = new Intent(getActivity(), QuoteActivity.class);
                     startActivity(intent2);
                     break;
-                case R.id.button_draft_story_activity:
+                case R.id.button_saved_story_activity:
                     Intent intent3 = new Intent(getActivity(), SavedStoryActivity.class);
                     startActivity(intent3);
+                    break;
+                case R.id.button_saved_quote_activity:
+                    Intent intent4 = new Intent(getActivity(), SavedQuoteActivity.class);
+                    startActivity(intent4);
                     break;
             }
         }
