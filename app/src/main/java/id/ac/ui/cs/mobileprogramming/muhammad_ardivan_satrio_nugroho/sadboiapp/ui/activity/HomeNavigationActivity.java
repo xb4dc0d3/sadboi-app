@@ -124,13 +124,15 @@ public class HomeNavigationActivity extends AppCompatActivity {
 
     // TODO: Create fragment/activity to CreateStory
     public void createStory(View view) {
-        Intent intent = new Intent(this, CreateUpdateStoryActivity.class);
+        Intent intent = new Intent(this, SavedStoryActivity.class);
         startActivity(intent);
     }
 
     // TODO: Create fragment/activity to createQuote
     public void createQuote(View view) {
-        Intent intent = new Intent(this, CreateUpdateQuoteActivity.class);
+        Intent intent = new Intent(this, SavedQuoteActivity.class);
         startActivity(intent);
     }
+
+
 }

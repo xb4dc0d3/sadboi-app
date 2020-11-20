@@ -1,15 +1,19 @@
-package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp;
+package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.Story;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity.StoryActivity;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.model.SavedStory;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.viewmodel.SavedStoryViewModel;
 
 public class ShowStoryDetail extends AppCompatActivity {
 
@@ -18,6 +22,8 @@ public class ShowStoryDetail extends AppCompatActivity {
 
     private static String title = "";
     private static String content = "";
+
+    private SavedStoryViewModel mSavedStoryViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,9 @@ public class ShowStoryDetail extends AppCompatActivity {
         content = intent.getStringExtra(StoryActivity.content);
         textViewStoryTitle.setText(title);
         textViewStoryContent.setText(content);
+
+
+        mSavedStoryViewModel = ViewModelProviders.of(this).get(SavedStoryViewModel.class);
     }
 
     public void shareStory(View view) {
@@ -43,5 +52,25 @@ public class ShowStoryDetail extends AppCompatActivity {
         sendIntent.setType("text/plain");
         Intent shareIntent = Intent.createChooser(sendIntent, null);
         startActivity(shareIntent);
+    }
+
+    public void saveStory(View view) {
+
+        try {
+            SavedStory savedStory = new SavedStory(title, content);
+            Log.d("WHATTT", savedStory.toString());
+            Log.d("Title ", savedStory.getTitle());
+            Log.d("Content", savedStory.getContent());
+            mSavedStoryViewModel.insert(savedStory);
+        } catch (Exception e) {
+            Toast.makeText(
+                    getApplicationContext(),
+                    "Something's wrong",
+                    Toast.LENGTH_LONG).show();
+            Log.d("ERROR", "exception", e);
+        }
+
+        Intent intent = new Intent(this, SavedStoryActivity.class);
+        startActivity(intent);
     }
 }
