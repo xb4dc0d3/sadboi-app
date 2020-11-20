@@ -5,20 +5,18 @@ import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
+import android.view.MenuItem;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
 
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.network.NetworkReceiver;
@@ -36,40 +34,13 @@ public class HomeNavigationActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final FloatingActionButton fab = findViewById(R.id.fab);
-        final FloatingActionButton fab1 = findViewById(R.id.fab1);
-        final FloatingActionButton fab2 = findViewById(R.id.fab2);
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (btnFlag) {
-                    fab1.show();
-                    fab2.show();
-                    fab1.animate().translationY(-(fab2.getCustomSize()+fab.getCustomSize()+20));
-                    fab2.animate().translationY(-(fab.getCustomSize()+10));
-                    fab.setImageResource(R.drawable.ic_close_white);
-                    btnFlag = false;
-                }
-
-                else {
-                    fab1.hide();
-                    fab2.hide();
-                    fab1.animate().translationY(0);
-                    fab2.animate().translationY(0);
-                    fab.setImageResource(R.drawable.ic_action_add);
-                    btnFlag = true;
-                }
-            }
-        });
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_story, R.id.nav_draft_story, R.id.nav_quote)
+                R.id.nav_home)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -121,18 +92,4 @@ public class HomeNavigationActivity extends AppCompatActivity {
         this.unregisterReceiver(receiver);
         super.onPause();
     }
-
-    // TODO: Create fragment/activity to CreateStory
-    public void createStory(View view) {
-        Intent intent = new Intent(this, SavedStoryActivity.class);
-        startActivity(intent);
-    }
-
-    // TODO: Create fragment/activity to createQuote
-    public void createQuote(View view) {
-        Intent intent = new Intent(this, SavedQuoteActivity.class);
-        startActivity(intent);
-    }
-
-
 }
