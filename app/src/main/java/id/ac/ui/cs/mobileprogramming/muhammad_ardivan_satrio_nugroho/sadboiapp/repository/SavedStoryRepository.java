@@ -18,7 +18,7 @@ public class SavedStoryRepository {
 
     public SavedStoryRepository(Application application) {
         AppDatabase db = AppDatabase.getDatabase(application);
-        mSavedStoryDao = db.storyPostDao();
+        mSavedStoryDao = db.savedStoryDao();
         mAllStoryPosts = mSavedStoryDao.getAllStoryPosts();
     }
 

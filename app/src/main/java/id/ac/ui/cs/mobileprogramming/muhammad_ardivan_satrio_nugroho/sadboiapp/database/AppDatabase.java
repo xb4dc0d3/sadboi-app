@@ -15,7 +15,7 @@ import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.m
 public abstract class AppDatabase extends RoomDatabase {
 
 
-    public abstract SavedStoryDao storyPostDao();
+    public abstract SavedStoryDao savedStoryDao();
     public abstract SavedQuoteDao savedQuoteDao();
 
     private static volatile AppDatabase INSTANCE;
