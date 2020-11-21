@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">Sadboi App</string>
     <string name="sadboi_app_logo">sadboi_app_logo</string>
-    <string name="homepage_text">
-        Selamat datang di aplikasi SadBoi, disini Anda dapat mencurahkan isi hati Anda dan melihat keluh
-        kesah orang lain. Tidak perlu cemas, semua pasti pernah merasakan SadBoi.
-    </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home_navigation">HomeNavigationActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -32,5 +28,6 @@
     <string name="saved_stories_text">Saved Stories</string>
     <string name="saved_quotes_text">Saved Quotes</string>
     <string name="no_quote_text">No quote</string>
+    <string name="homepage_text">Welcome to SadBoi app, here you can pour out your heart and see other people\'s lament. No need to worry, everyone must have felt SadBoi.</string>
 
 </resources>
