@@ -26,6 +26,12 @@ android {
         }
     }
 
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+        }
+    }
+
     // View Binding Android Studio >=4.0
     android {
         buildFeatures {

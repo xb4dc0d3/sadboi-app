@@ -7,9 +7,21 @@ import android.widget.Toast;
 
 public class NetworkReceiver extends BroadcastReceiver {
 
+    Toast mToast;
+    String currentStatus = "";
+
     @Override
     public void onReceive(final Context context, final Intent intent) {
         String status = NetworkStatus.getConnectivityStatusString(context);
-        Toast.makeText(context, status, Toast.LENGTH_LONG).show();
+
+        if (mToast != null) {
+            mToast.cancel();
+        }
+
+        if (!currentStatus.equals(status)) {
+            mToast = Toast.makeText(context, status, Toast.LENGTH_LONG);
+            mToast.show();
+            currentStatus = status;
+        }
     }
 }
