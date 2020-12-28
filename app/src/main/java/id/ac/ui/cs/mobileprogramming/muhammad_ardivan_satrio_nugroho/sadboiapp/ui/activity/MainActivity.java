@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityMainBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.LocationTrack;
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.ShowSurfaceViewActivity;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -185,6 +186,13 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(locationTrack!=null)
+            locationTrack.stopListener();
+    }
+
     public void startMainPageActivity(View view) {
         Intent intent = new Intent(this, HomeNavigationActivity.class);
         startActivity(intent);
@@ -196,9 +204,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        locationTrack.stopListener();
+    public void startShowSurfaceView(View view) {
+
+        Intent intent = new Intent(this, ShowSurfaceViewActivity.class);
+        startActivity(intent);
     }
+
+
+
+
 }

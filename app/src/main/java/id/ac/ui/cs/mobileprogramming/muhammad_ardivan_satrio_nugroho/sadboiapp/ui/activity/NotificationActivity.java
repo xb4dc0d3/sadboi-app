@@ -24,7 +24,13 @@ public class NotificationActivity extends AppCompatActivity {
 
         button.setOnClickListener( v -> {
             EditText e1= findViewById(R.id.editText);
-            int i = Integer.parseInt(e1.getText().toString());
+
+            int i = 0;
+            try{
+                i = Integer.parseInt(e1.getText().toString());
+            } catch(NumberFormatException ex){ // handle your exception
+                Toast.makeText(NotificationActivity.this, "There's something wrong", Toast.LENGTH_LONG).show();
+            }
             Intent intent = new Intent(NotificationActivity.this, AlarmReceiver.class);
             PendingIntent pendingIntent = PendingIntent.getBroadcast(NotificationActivity.this,23424243, intent, 0);
             AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
