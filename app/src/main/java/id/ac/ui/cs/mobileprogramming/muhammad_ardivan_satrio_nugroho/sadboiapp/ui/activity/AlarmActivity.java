@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.alarm.AlarmReceiver;
 
-public class NotificationActivity extends AppCompatActivity {
+public class AlarmActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,14 @@ public class NotificationActivity extends AppCompatActivity {
             try{
                 i = Integer.parseInt(e1.getText().toString());
             } catch(NumberFormatException ex){ // handle your exception
-                Toast.makeText(NotificationActivity.this, "There's something wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(AlarmActivity.this, "There's something wrong", Toast.LENGTH_LONG).show();
             }
-            Intent intent = new Intent(NotificationActivity.this, AlarmReceiver.class);
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(NotificationActivity.this,23424243, intent, 0);
+            Intent intent = new Intent(AlarmActivity.this, AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this,23424243, intent, 0);
             AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+(i*1000), pendingIntent);
 
-            Toast.makeText(NotificationActivity.this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
+            Toast.makeText(AlarmActivity.this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
         });
     }
 }

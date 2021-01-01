@@ -18,7 +18,6 @@ import java.util.ArrayList;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.R;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.databinding.ActivityMainBinding;
 import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.LocationTrack;
-import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.ShowSurfaceViewActivity;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -199,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startAlarmActivity(View view) {
-        Intent intent = new Intent(this, NotificationActivity.class);
+        Intent intent = new Intent(this, AlarmActivity.class);
         startActivity(intent);
     }
 

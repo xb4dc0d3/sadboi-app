@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo;
+package id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.ui.activity;
 
 import android.content.Context;
 import android.opengl.GLES20;
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
+
+import id.ac.ui.cs.mobileprogramming.muhammad_ardivan_satrio_nugroho.sadboiapp.pojo.Triangle;
 
 public class ShowSurfaceViewActivity extends AppCompatActivity {
 
