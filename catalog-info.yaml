@@ -1,0 +1,10 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: sadboi-app
+  annotations:
+    github.com/project-slug: xb4dc0d3/sadboi-app
+spec:
+  type: other
+  lifecycle: unknown
